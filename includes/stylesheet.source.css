@@ -1,0 +1,195 @@
+/**
+ * Copyright (c) 2008-2015, Massachusetts Institute of Technology (MIT)
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors
+ * may be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+﻿html {
+	overflow-y:scroll;
+	background:#FAFAFA;
+}
+
+a img {
+	border:0;
+}
+
+body {
+	font-size: 14px;
+	font-family: Arial;
+	width:960px;
+	margin:0 auto;
+	margin-bottom:15px;
+	background:white;
+	border:solid silver 1px;
+	border-top: none;
+}
+
+h1 {
+    margin-top:11px;
+}
+
+h4 {
+	font-style:italic;
+}
+
+h3 {
+	margin:11px auto;
+}
+
+h2 {
+	font-size:1.8em;
+	vertical-align:middle;
+	margin:0px;
+}
+
+h5, h6 {
+	margin:0;
+}
+
+hr {
+	background-color: silver;
+	border: 0 none;
+	color: silver;
+	height: 1px;
+}
+
+a:link, a:visited {
+	text-decoration:none;
+	color: Blue /*#3B6E8F lab official link color*/;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+a:active {
+	color:Red;
+}
+
+a.main:link, a.main:visited, a.main:hover, a.main:active {
+	text-decoration:none;
+	color:White;
+}
+
+td {
+	padding:0;
+}
+
+code {
+	color:Green;
+}
+
+img.main {
+	max-width:680px;
+	margin:0 10px;
+}
+
+div.figure {
+	width:700px;
+	text-align:center;
+}
+
+div.figure p {
+	margin:0;
+	font-style:italic;
+	font-size:.8em;
+}
+
+.bu {
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+.content {
+	vertical-align:top;
+}
+
+.current {
+	font-weight:bold;
+	color:#004668;
+}
+
+.footer {
+	width:940px;
+	text-align:center;
+	font-size:11px;
+	margin:10px;
+	border-top:thin silver solid;
+}
+
+.ita {
+    font-style:italic;
+    color:#000099;
+}
+
+.sidebar {
+    vertical-align:top;
+	width:220px;
+	margin:10px;
+	float:left;
+}
+
+.marginless {
+	margin:0;
+}
+
+.mainarea {
+	width:700px;
+	margin:10px;
+	float:right;
+}
+
+.padtable td {
+	padding:2px;
+}
+
+#searcharea {
+	margin:0px auto;
+	height:30px;
+	vertical-align:middle;
+	float:right;
+	padding-left:400px;
+}
+
+#header {
+	margin:0;
+	height:45px;
+	padding-top: 2px;
+	background:url(../images/banner.png);
+	color:White;
+}
+
+#headerbr {
+	background:url(../images/bannerbr.png) 100% 100% no-repeat;
+	width:100%;
+	height:45px;
+}
+
+#headerbl {
+	background:url(../images/bannerbl.png) 0 100% no-repeat;
+	width:100%;
+	height:45px;
+}

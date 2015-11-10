@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2008-2015, Massachusetts Institute of Technology (MIT)
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    3. Neither the name of the copyright holder nor the names of its contributors
+    may be used to endorse or promote products derived from this software without
+    specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Maven artifact details -->
+	<groupId>edu.mit.ll.nics.help</groupId>
+	<artifactId>nics-help</artifactId>
+	<version>6.1</version>
+	<packaging>pom</packaging>
+
+	<!-- Project information -->
+	<name>NICS database schemas and scripts</name>
+	<description>SQL schema and data creation scripts</description>
+
+
+	<properties>
+		<license.plugin.version>1.9.0</license.plugin.version>
+	</properties>
+
+	<!-- Build configuration for this project -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+                    <!-- This plugin formats source files by checking and adding a copyright 
+                        header if it's missing. -->
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <version>${license.plugin.version}</version>
+                    <configuration>
+                        <aggregate>true</aggregate>
+                        <header>${basedir}/copyright.txt</header>
+                        <strictCheck>true</strictCheck>
+                        <properties>
+                            <year>2015</year>
+                        </properties>
+                        <useDefaultExcludes>false</useDefaultExcludes>
+
+                        <!-- Additional file-to-comment-style mappings -->
+                        <mapping>
+                            <xslt>XML_STYLE</xslt>
+                        </mapping>
+
+                        <excludes>
+                            <!-- Some default excludes -->
+                            <exclude>**/*~</exclude>
+                            <exclude>**/*.jar</exclude>
+                            <exclude>**/*.zip</exclude>
+                            <exclude>**/*.tar*</exclude>
+                            <exclude>**/*.pdf</exclude>
+                            <exclude>**/*.jpg</exclude>
+                            <exclude>**/*.png</exclude>
+                            <exclude>**/*.gif</exclude>
+                            <exclude>**/*.ico</exclude>
+                            <exclude>**/*.bmp</exclude>
+                            <exclude>**/*.tif*</exclude>
+                            <exclude>**/*.cr2</exclude>
+                            <exclude>**/MANIFEST.MF</exclude>
+                            <exclude>**/.classpath</exclude>
+                            <exclude>**/.project</exclude>
+                            <exclude>**/.settings/**</exclude>
+                            <exclude>**/target/**</exclude>
+                            <exclude>**/test-output/**</exclude>
+			    			<exclude>**/META-INF/services/**</exclude>
+                            <exclude>**/.git</exclude>
+                            <exclude>**/.gitignore</exclude>
+                            <exclude>**/.git/**</exclude>
+                            <exclude>**/*.log</exclude>
+                            <exclude>**/*.txt</exclude>
+
+                            <!-- Project-specific excludes -->
+                        </excludes>
+                    </configuration>
+                    <inherited>false</inherited>
+                    <executions>
+                        <execution>
+                            <id>update-copyright</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>format</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>verify-copyright</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+			</plugins>
+		</pluginManagement>
+		<!-- Plugins specific to this project -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.3</version>
+				<dependencies>
+					<dependency>
+						<groupId>edu.mit.ll.nics.assembly</groupId>
+						<artifactId>archive-assembly</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>edu.mit.ll.nics.assembly</groupId>
+						<artifactId>spring-deploy-assembly</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>archive-assembly</descriptorRef>
+					</descriptorRefs>
+					<finalName>nics-help-${project.version}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+	        	<groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+        	</plugin>
+		</plugins>
+	</build>
+</project>
