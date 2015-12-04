@@ -1,3 +1,8 @@
 # nics-help
+NICS Help Site Repository
 
-Repo for the NICS Help Site
+## Dependencies
+- nics-assembly
+
+## Building
+    mvn install
