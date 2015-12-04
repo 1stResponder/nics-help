@@ -82,12 +82,19 @@
                             <exclude>**/*.tar*</exclude>
                             <exclude>**/*.pdf</exclude>
                             <exclude>**/*.jpg</exclude>
+                            <exclude>**/*.JPG</exclude>
                             <exclude>**/*.png</exclude>
+                            <exclude>**/*.PNG</exclude>
                             <exclude>**/*.gif</exclude>
                             <exclude>**/*.ico</exclude>
                             <exclude>**/*.bmp</exclude>
                             <exclude>**/*.tif*</exclude>
                             <exclude>**/*.cr2</exclude>
+                            <exclude>**/*.ogg</exclude>
+                            <exclude>**/*.mp4</exclude>
+                            <exclude>**/*.webm</exclude>
+                            <exclude>**/*.wmv</exclude>
+                            <exclude>**/*.swf</exclude>
                             <exclude>**/MANIFEST.MF</exclude>
                             <exclude>**/.classpath</exclude>
                             <exclude>**/.project</exclude>
